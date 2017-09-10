@@ -1,7 +1,19 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# --- BLOG SEED DATA --- #
+
+b1 = Blog.create!(title: "Blog Manual", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis lacus eu erat malesuada pretium quis vel nisl. Nunc lobortis dui sit amet ipsum ultrices viverra. Morbi laoreet, est et venenatis vestibulum, nibh mauris mattis lacus, ac tincidunt purus neque a nisi. Nulla malesuada porttitor malesuada. Nam id odio in dolor sollicitudin tempor. Duis eu eros vel sapien convallis ultricies. Suspendisse vitae commodo dui, ac dictum metus. Mauris sit amet lorem in massa ornare gravida ac in enim. Aenean dignissim lacus nec leo vehicula accumsan. Sed diam tortor, auctor non volutpat eu, ultrices vel mauris. Cras accumsan, sapien quis porttitor scelerisque, orci diam elementum augue, id mollis quam tortor sit amet purus. Cras ultricies luctus ornare.
+
+Curabitur convallis erat in nibh convallis, eu elementum velit posuere. Suspendisse et ultrices metus, non vestibulum tellus. Fusce pharetra, purus id hendrerit semper, lectus leo facilisis nunc, id cursus ligula nunc et urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris gravida gravida nulla, vel egestas sapien rutrum a. Mauris id ornare neque. Donec dapibus metus at odio volutpat cursus.")
+
+
+10.times do |blog|
+  Blog.create!(
+    title: "My Blog Post #{blog}",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis lacus eu erat malesuada pretium quis vel nisl. Nunc lobortis dui sit amet ipsum ultrices viverra. Morbi laoreet, est et venenatis vestibulum, nibh mauris mattis lacus, ac tincidunt purus neque a nisi. Nulla malesuada porttitor malesuada. Nam id odio in dolor sollicitudin tempor. Duis eu eros vel sapien convallis ultricies. Suspendisse vitae commodo dui, ac dictum metus. Mauris sit amet lorem in massa ornare gravida ac in enim. Aenean dignissim lacus nec leo vehicula accumsan. Sed diam tortor, auctor non volutpat eu, ultrices vel mauris. Cras accumsan, sapien quis porttitor scelerisque, orci diam elementum augue, id mollis quam tortor sit amet purus. Cras ultricies luctus ornare.
+
+    Curabitur convallis erat in nibh convallis, eu elementum velit posuere. Suspendisse et ultrices metus, non vestibulum tellus. Fusce pharetra, purus id hendrerit semper, lectus leo facilisis nunc, id cursus ligula nunc et urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris gravida gravida nulla, vel egestas sapien rutrum a. Mauris id ornare neque. Donec dapibus metus at odio volutpat cursus.
+
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+  )
+end
+
+puts "Blogs created"
