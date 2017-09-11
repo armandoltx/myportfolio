@@ -9,7 +9,7 @@ class BlogsController < ApplicationController
   end
 
   def new
-    @blog ||= Blog.new(blog_params)
+    @blog ||= Blog.new
   end
 
   def edit
@@ -17,6 +17,7 @@ class BlogsController < ApplicationController
 
   def create
     @blog ||= Blog.new(blog_params)
+
     if @blog.save
       flash[:message] = "Blog successfully created"
       redirect_to @blog
