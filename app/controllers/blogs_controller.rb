@@ -28,7 +28,7 @@ class BlogsController < ApplicationController
   end
 
   def update
-    if @blog.update(Blog_params)
+    if @blog.update(blog_params)
       flash[:message] = 'Blog Updated'
       redirect_to @blog
     else
@@ -40,7 +40,7 @@ class BlogsController < ApplicationController
   def destroy
     @blog.destroy
     flash[:message] = 'Blog Deleted'
-    redirect_to portfolios_url
+    redirect_to blogs_path
   end
 
   private

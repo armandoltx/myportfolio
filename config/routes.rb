@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'portfolios/index'
+
+  get 'portfolios/new'
+
+  get 'portfolios/create'
+
+  get 'portfolios/edit'
+
+  get 'portfolios/update'
+
+  get 'portfolios/show'
+
+  get 'portfolios/destroy'
+
   resources :blogs
 
   get 'pages/home'
