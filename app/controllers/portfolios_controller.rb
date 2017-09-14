@@ -1,5 +1,5 @@
 class PortfoliosController < ApplicationController
-  before_action :set_blog, only [:show, :edit, :update, :destroy]
+  before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
   def index
     @portfolio_items ||= Portfolio.all
@@ -16,7 +16,7 @@ class PortfoliosController < ApplicationController
     @portfolio_item ||= Portfolio.new(portfolio_params)
 
     if @portfolio_item.save
-      flash:[message] = 'Portfolio successfully created'
+      flash[:message] = 'Portfolio successfully created'
       redirect_to portfolios_path
     else
       flas[:message] = "Portfolio is not created"
