@@ -17,3 +17,15 @@ Curabitur convallis erat in nibh convallis, eu elementum velit posuere. Suspendi
 end
 
 puts "Blogs created"
+
+9.times do |portfolio_item|
+  Portfolio.create!(
+    title: "Portfolio Title N #{portfolio_item}",
+    subtitle: "Portfolio Subtitle N #{portfolio_item}",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis lacus eu erat malesuada pretium quis vel nisl. Nunc lobortis dui sit amet ipsum ultrices viverra. Morbi laoreet, est et venenatis vestibulum, nibh mauris mattis lacus, ac tincidunt purus neque a nisi. Nulla malesuada porttitor malesuada. Nam id odio in dolor sollicitudin tempor. Duis eu eros vel sapien convallis ultricies. Suspendisse vitae commodo dui, ac dictum metus. Mauris sit amet lorem in massa ornare gravida ac in enim. Aenean dignissim lacus nec leo vehicula accumsan. Sed diam tortor, auctor non volutpat eu, ultrices vel mauris. Cras accumsan, sapien quis porttitor scelerisque, orci diam elementum augue, id mollis quam tortor sit amet purus. Cras ultricies luctus ornare.",
+    thumb_image:"http://via.placeholder.com/350x200" ,
+    main_image: "http://via.placeholder.com/400x400"
+  )
+end
+
+puts "Portfolios created"
