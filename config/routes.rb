@@ -19,5 +19,5 @@ Rails.application.routes.draw do
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
             # The as: 'portfolio_show' is called NAMING ROUTES and what it does is giving another prefix name, check in rake routes.
             # WHEN you customise the routes, need to check the links in the whole app, because they are affected by the changes.
-            # Instead of using portfolio_path(portfolio_item) we use portfolio_show(portfolio_item) in the link created in the index page to link to the show page
+            # Instead of using portfolio_path(portfolio_item) we use portfolio_show_path(portfolio_item) in the link created in the index page to link to the show page
 end
