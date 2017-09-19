@@ -2,7 +2,7 @@
   <%= link_to "Create New Blog", new_blog_url %>
   <% @blogs.each do |blog| %>
     <h2 class="blog-post-title">
-      <%= link_to blog.title.upcase, @blog %>
+      <%= link_to blog.title.upcase, blog_path(blog.id) %>
     </h2>
     <div class="blog-post-body">
       <%= truncate(blog.body, :length => 400) %>

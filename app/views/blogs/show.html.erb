@@ -1,4 +1,4 @@
 <h1><%= @blog.title %></h1>
-<div><%= @portfolio_item.body %></div>
-  <%= link_to "EDIT", edit_blog_path(blog) %>
-  <%= link_to "DELETE", blog, method: :delete, :data => { confirm: "are you sure?" } %>
+<div><%= @blog.body %></div>
+  <%= link_to "EDIT", edit_blog_path(@blog.id) %>
+  <%= link_to "DELETE", @blog, method: :delete, :data => { confirm: "are you sure?" } %>
