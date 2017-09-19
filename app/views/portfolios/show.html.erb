@@ -1,2 +1,4 @@
-<h1>Portfolios#show</h1>
-<p>Find me in app/views/portfolios/show.html.erb</p>
+<h1><%= @portfolio_item.title %></h1>
+<%= image_tag @portfolio_item.main_image %>
+<h3><%= @portfolio_item.subtitle %></h3>
+<div><%= @portfolio_item.body %></div>
