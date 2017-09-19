@@ -20,7 +20,7 @@ class BlogsController < ApplicationController
 
     if @blog.save
       flash[:message] = "Blog successfully created"
-      redirect_to @blog
+      redirect_to @blog # redirect to the blog just created
     else
       flash[:message] = "Blog not created"
       render :new
