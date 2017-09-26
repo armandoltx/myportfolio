@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
 
   def index
     @blogs ||= Blog.all.order("created_at DESC")
@@ -40,7 +40,17 @@ class BlogsController < ApplicationController
   def destroy
     @blog.destroy
     flash[:message] = 'Blog Deleted'
-    redirect_to blogs_path
+    redirect_to blogs_url
+  end
+
+  def toggle_status
+    if @blog.draft?
+      @blog.published!
+    elsif @blog.published?
+      @blog.draft!
+    end
+    flash[:message] = "Post status has been updated."
+    redirect_to blogs_url
   end
 
   private
