@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   end
   resources :portfolios, except:[:show]
             # Give me all the routes for portfolios except the ones include in the array and now I can create my route for show action
+  get 'angular-itmes', to: 'portfolios#angular'
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
             # The as: 'portfolio_show' is called NAMING ROUTES and what it does is giving another prefix name, check in rake routes.
             # WHEN you customise the routes, need to check the links in the whole app, because they are affected by the changes.
