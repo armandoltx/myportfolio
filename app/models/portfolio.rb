@@ -10,7 +10,7 @@ class Portfolio < ApplicationRecord
    scope :ruby_on_rails_portfolio_items, ->{ where(subtitle: "Ruby on Rails") }
 
    #callbacks
-   after_initialize :set_defaults
+   after_initialize :set_defaults #when the new action is called in the controller
 
    def set_defaults
     self.main_image ||= "http://via.placeholder.com/400x400"
