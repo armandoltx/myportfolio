@@ -25,7 +25,7 @@ class PortfoliosController < ApplicationController
       flash[:message] = 'Portfolio successfully created'
       redirect_to portfolios_path # redirecting to portfolios#index
     else
-      flas[:message] = "Portfolio is not created"
+      flash[:message] = "Portfolio is not created"
       render :new
     end
   end
