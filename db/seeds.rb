@@ -12,11 +12,11 @@ puts "3 Topics created"
 # --- BLOG SEED DATA --- #
 
 b1 = Blog.create!(
-  title: "Blog Manual", 
+  title: "Blog Manual",
   body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis lacus eu erat malesuada pretium quis vel nisl. Nunc lobortis dui sit amet ipsum ultrices viverra. Morbi laoreet, est et venenatis vestibulum, nibh mauris mattis lacus, ac tincidunt purus neque a nisi. Nulla malesuada porttitor malesuada. Nam id odio in dolor sollicitudin tempor. Duis eu eros vel sapien convallis ultricies. Suspendisse vitae commodo dui, ac dictum metus. Mauris sit amet lorem in massa ornare gravida ac in enim. Aenean dignissim lacus nec leo vehicula accumsan. Sed diam tortor, auctor non volutpat eu, ultrices vel mauris. Cras accumsan, sapien quis porttitor scelerisque, orci diam elementum augue, id mollis quam tortor sit amet purus. Cras ultricies luctus ornare.
 
   Curabitur convallis erat in nibh convallis, eu elementum velit posuere. Suspendisse et ultrices metus, non vestibulum tellus. Fusce pharetra, purus id hendrerit semper, lectus leo facilisis nunc, id cursus ligula nunc et urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris gravida gravida nulla, vel egestas sapien rutrum a. Mauris id ornare neque. Donec dapibus metus at odio volutpat cursus.",
-  topic_id: Topic.first.id 
+  topic_id: Topic.first.id
 )
 
 10.times do |blog|
@@ -43,7 +43,7 @@ puts "Blogs created"
   )
 end
 p1 = Portfolio.create!(
-  title: "Portfolio Title N #{portfolio_item}",
+  title: "Portfolio Title N",
   subtitle: "Angular",
   body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis lacus eu erat malesuada pretium quis vel nisl. Nunc lobortis dui sit amet ipsum ultrices viverra. Morbi laoreet, est et venenatis vestibulum, nibh mauris mattis lacus, ac tincidunt purus neque a nisi. Nulla malesuada porttitor malesuada. Nam id odio in dolor sollicitudin tempor. Duis eu eros vel sapien convallis ultricies. Suspendisse vitae commodo dui, ac dictum metus. Mauris sit amet lorem in massa ornare gravida ac in enim. Aenean dignissim lacus nec leo vehicula accumsan. Sed diam tortor, auctor non volutpat eu, ultrices vel mauris. Cras accumsan, sapien quis porttitor scelerisque, orci diam elementum augue, id mollis quam tortor sit amet purus. Cras ultricies luctus ornare.",
   thumb_image:"http://via.placeholder.com/350x200" ,
@@ -51,3 +51,11 @@ p1 = Portfolio.create!(
 )
 
 puts "Portfolios created"
+
+3.times do |technology|
+  Portfolio.last.technologies.create!(
+    name: "Technology #{technology}"
+  )
+end
+
+puts "Technology created"
