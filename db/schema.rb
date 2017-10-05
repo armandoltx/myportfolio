@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20171004095906) do
     t.string "percent_utilized"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "bdge"
+    t.text "badge"
   end
 
   create_table "topics", force: :cascade do |t|
