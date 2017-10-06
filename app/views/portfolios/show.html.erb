@@ -2,5 +2,11 @@
 <%= image_tag @portfolio_item.main_image %>
 <h3><%= @portfolio_item.subtitle %></h3>
 <div><%= @portfolio_item.body %></div>
+
+<h2>Technology Used:</h2>
+<%= @portfolio_items.technologies each  do |t| %>
+  <p>t.name</p>
+<% end %>
+
   <%= link_to "EDIT", edit_portfolio_path(@portfolio_item) %>
   <%= link_to "DELETE", portfolio_path(@portfolio_item), method: :delete, :data => { confirm: "are you sure?" } %>

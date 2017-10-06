@@ -11,6 +11,14 @@
     <%= f.label :body %>
     <%= f.text_area :body, class: 'form-control', rows: 20 %>
   </div>
+  <ul>
+    <%= f.fields_for :technologies do |technology_form| %> # special rails method to create nested forms 
+    <li>
+      <%= technology_form.label :name %>
+      <%= technology_form.text_field :name %>
+    </li>
+    <% end %>
+  </ul>
   <div class="form-group">
     <%= f.submit "Submit", class: 'btn btn-primary' %>
   </div>
