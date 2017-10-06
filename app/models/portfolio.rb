@@ -1,12 +1,15 @@
 class Portfolio < ApplicationRecord
   include Placeholder
+  has_many :technologies
+  accepts_nested_attributes_for :technologies,
+                                reject_if: lambda { |attrs| attrs['name'].blank? } # need to add all attributes in technologies we just have 'name' it is a data validation.. we say if name is blank do not let it create it
   validates_presence_of :title, :body, :main_image, :thumb_image
 
   # scopes
   # 1st method
   def self.angular
    where(subtitle: 'Angular')
-  end
+ end
   # 2nd method
   scope :ruby_on_rails_portfolio_items, ->{ where(subtitle: "Ruby on Rails") }
 
