@@ -1,6 +1,6 @@
 class Portfolio < ApplicationRecord
   include Placeholder
-  has_many :technologies
+  has_many :technologies, dependent: :destroy
   accepts_nested_attributes_for :technologies,
                                 reject_if: lambda { |attrs| attrs['name'].blank? } # need to add all attributes in technologies we just have 'name' it is a data validation.. we say if name is blank do not let it create it
   validates_presence_of :title, :body, :main_image, :thumb_image

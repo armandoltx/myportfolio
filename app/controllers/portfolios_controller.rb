@@ -4,7 +4,7 @@ class PortfoliosController < ApplicationController
   def index
     @portfolio_items ||= Portfolio.all
   end
-  
+
   ### SCOPES
   def angular
     @angular_portfolio_items ||= Portfolio.angular
@@ -61,7 +61,7 @@ class PortfoliosController < ApplicationController
                                       :body,
                                       :main_image,
                                       :thumb_image,
-                                      technologies_attributes: [{name: 'Ruby}, {name: 'Rails}, {name: 'Angular}, {name: 'Ionic'}]
+                                      technologies_attributes: [:name]
                                      )
   end
 end
