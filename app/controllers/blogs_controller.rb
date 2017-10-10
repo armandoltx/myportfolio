@@ -3,9 +3,12 @@ class BlogsController < ApplicationController
 
   def index
     @blogs ||= Blog.all.order("created_at DESC")
+    @page_title = "My Blog" # to dynamically change the title of the site
   end
 
   def show
+    @page_title = @blog.title # to dynamically change the title of the site
+    @seo_keywords = @blog.body # to add dynamically the seo words
   end
 
   def new
