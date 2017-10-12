@@ -1,7 +1,8 @@
 <h2 class="blog-post-title">
     <%= link_to blog.title.upcase, blog_path(blog.id) %>
   </h2>
-  <div><%= link_to blog.status, toggle_status_blog_path(blog.id) %></div>
+  <div>Published <%= link_to blog.status, toggle_status_blog_path(blog.id) %></div>
+  <div class=""><%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</div>
   <div class="blog-post-body">
     <%= truncate(blog.body, :length => 400) %>
   </div>
