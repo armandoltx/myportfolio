@@ -1,0 +1,9 @@
+<h2 class="blog-post-title">
+    <%= link_to blog.title.upcase, blog_path(blog.id) %>
+  </h2>
+  <div><%= link_to blog.status, toggle_status_blog_path(blog.id) %></div>
+  <div class="blog-post-body">
+    <%= truncate(blog.body, :length => 400) %>
+  </div>
+  <%= link_to "EDIT", edit_blog_path(blog) %>
+  <%= link_to "DELETE", blog, method: :delete, :data => { confirm: "are you sure?" } %>
