@@ -15,7 +15,7 @@
     <p class="alert"><%= alert %></p>
 
     <%= login_helper %>
-    
+
     <% if flash[:message] %>
       <% flash.each do |key, message| %>
         <%= content_tag(:div, message, class: "alert alert-info") %>
