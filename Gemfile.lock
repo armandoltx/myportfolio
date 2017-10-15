@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/armandoltx/armandoltx_view_tool
+  revision: 68dd44c1111c780c7d1d3debf55c4e6b9d17bb58
+  specs:
+    armandoltx_view_tool (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -186,6 +192,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  armandoltx_view_tool!
   bootstrap (~> 4.0.0.alpha6)
   byebug
   coffee-rails (~> 4.2)
