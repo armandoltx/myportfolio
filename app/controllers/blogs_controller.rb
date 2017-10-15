@@ -1,6 +1,7 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
   layout "blog"
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all # petergate gem for  authorization check the user model to see what we have created
 
   def index
     @blogs ||= Blog.all.order("created_at DESC")

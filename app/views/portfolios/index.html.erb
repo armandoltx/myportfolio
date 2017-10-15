@@ -1,5 +1,5 @@
 <h1>Portfolios#index</h1>
 
-<%= link_to "Create New Portfolio", new_portfolio_url %>
+<%= link_to "Create New Portfolio" if logged_in?(:site_admin) %>
 <%= render partial: 'portfolio_item', collection: @portfolio_items %>
 <%# partial: ==>this is a partial, 'portfolio_item' ==> the name/path of the file partial, collection ==> we are passing a collection not just one record %>

@@ -1,5 +1,5 @@
 <div class="blog-post">
-  <%= link_to "Create New Blog", new_blog_url %>
+  <%= link_to "Create New Blog", new_blog_url if logged_in?(:site_admin) %>
   <%= render @blogs %><!-- instance of the show page controller and the partial needs to have the same name -->
 
 </div><!-- /.blog-post -->
