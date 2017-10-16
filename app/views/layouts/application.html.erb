@@ -13,21 +13,25 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
 
-    <%= render "shared/nav", location: 'top' %><!-- to create css classes -->
+          <%= render "shared/application_nav" %>
 
-    <%= login_helper %>
+          <%= login_helper %>
 
-    <% if flash[:message] %>
-      <% flash.each do |key, message| %>
-        <%= content_tag(:div, message, class: "alert alert-info") %>
-      <% end %>
-    <% end %>
+          <% if flash[:message] %>
+            <% flash.each do |key, message| %>
+              <%= content_tag(:div, message, class: "alert alert-info") %>
+            <% end %>
+          <% end %>
 
 
-    <%= yield %>
-    <%= copyright_generator %>
+          <%= yield %>
+          <%= copyright_generator %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
