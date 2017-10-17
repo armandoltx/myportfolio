@@ -19,7 +19,7 @@
 
           <%= render "shared/application_nav" %>
 
-          <%= login_helper %>
+          <%# login_helper %>
 
           <% if flash[:message] %>
             <% flash.each do |key, message| %>
@@ -29,7 +29,7 @@
 
 
           <%= yield %>
-          
+
           <%= render "shared/application_footer" %>
         </div>
       </div>
