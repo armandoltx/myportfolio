@@ -171,6 +171,11 @@ body {
   color: black;
   text-align: left;
 }
-.auth-links a {
+.auth-links{
+   .register-text {
+     text-align: right;
+   }
+   a {
   color: black;
+  }
 }
