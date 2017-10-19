@@ -1,10 +1,14 @@
-<h2 class="blog-post-title">
-    <%= link_to blog.title.upcase, blog_path(blog.id) %>
-  </h2>
-  <div>Published <%= link_to blog.status, toggle_status_blog_path(blog.id) %></div>
-  <div class=""><%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</div>
-  <div class="blog-post-body">
-    <%= truncate(blog.body, :length => 400) %>
-  </div>
-  <%= link_to "EDIT", edit_blog_path(blog) if logged_in?(:site_admin) %>
-  <%= link_to "DELETE", blog, method: :delete, :data => { confirm: "are you sure?" } if logged_in?(:site_admin) %>
+<div class="blog-post">
+  <h2 class="blog-post-title"><%= link_to blog.title.upcase, blog_path(blog.id) %></h2>
+  <p class="blog-post-meta">Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</p>
+
+  <% if logged_in?(:site_admin) %>
+  <p class="blog-post-meta">
+    <%= link_to blog.status, toggle_status_blog_path(blog.id) %> |
+    <%= link_to "EDIT", edit_blog_path(blog) %> |
+    <%= link_to "DELETE", blog, method: :delete, :data => { confirm: "are you sure?" } %>
+  </p>
+  <% end %>
+
+  <p><%= blog.body %></p>
+</div><!-- /.blog-post -->
