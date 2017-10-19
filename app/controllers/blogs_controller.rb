@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :toggle_status]}, site_admin: :all # petergate gem for  authorization check the user model to see what we have created
 
   def index
-    @blogs ||= Blog.all.order("created_at DESC")
+    @blogs ||= Blog.page(params[:page]).per(5)  # Kaminari gem to have pagination
     @page_title = "My Blog" # to dynamically change the title of the site
   end
 
