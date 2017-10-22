@@ -63,6 +63,9 @@ footer {
 footer p {
   margin-bottom: 0.25rem;
 }
+//
+// CUSTOM
+//
 
 .bg-inverse {
   background-color: #292b2c!important;
@@ -75,4 +78,8 @@ footer p {
 
 .navbar-inverse .navbar-toggler {
   border-color: rgba(255,255,255,.1);
+}
+
+.portfolio-form {
+  padding: 20px;
 }
