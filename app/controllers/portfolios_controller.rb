@@ -4,7 +4,7 @@ class PortfoliosController < ApplicationController
   access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all # petergate gem for  authorization check the user model to see what we have created
 
   def index
-    @portfolio_items ||= Portfolio.all
+    @portfolio_items ||= Portfolio.by_position
   end
 
   ### SCOPES
