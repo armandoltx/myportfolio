@@ -17,8 +17,10 @@ Rails.application.routes.draw do
       get :toggle_status
     end
   end
-  resources :portfolios, except:[:show]
-            # Give me all the routes for portfolios except the ones include in the array and now I can create my route for show action
+
+  resources :portfolios, except: [:show] do  # Give me all the routes for portfolios except the ones include in the array and now I can create my route for show action
+    put :sort, on: :collection # this is to create the put statement for drag and drop functionality
+  end
   get 'angular-itmes', to: 'portfolios#angular'
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
             # The as: 'portfolio_show' is called NAMING ROUTES and what it does is giving another prefix name, check in rake routes.

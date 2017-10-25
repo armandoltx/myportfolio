@@ -7,6 +7,14 @@ class PortfoliosController < ApplicationController
     @portfolio_items ||= Portfolio.by_position
   end
 
+  def sort  # the action needed for the route for the drag and drop
+    params[:order].each do |key, value|
+      Portfolio.find(value[:id]).update(position: value[:position]) # to comunicate with the DB you can see it in the console
+    end
+
+     render nothing: true  # not to go to the a new view
+  end
+
   ### SCOPES
   def angular
     @angular_portfolio_items ||= Portfolio.angular
