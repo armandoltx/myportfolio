@@ -5,6 +5,10 @@ class Portfolio < ApplicationRecord
                                 reject_if: lambda { |attrs| attrs['name'].blank? } # need to add all attributes in technologies we just have 'name' it is a data validation.. we say if name is blank do not let it create it
   validates_presence_of :title, :body, :main_image, :thumb_image
 
+  #this is for carrierwave in order to upload images
+  mount_uploader :thumb_image, PortfolioUploader
+  mount_uploader :main_image, PortfolioUploader
+
   # scopes
   # 1st method
   def self.angular
