@@ -38,11 +38,13 @@
     <h2>Technolgies Used:</h2>
     <div>
       <%= f.fields_for :technologies do |technology_form| %>  <%# :technologies is created in the portfolios model %>
-        <div class="form-group">
-          <%= technology_form.label :name %>
-          <%= technology_form.text_field :name, class: 'form-control' %>
-        </div>
+        <%= render 'technology_fields', f: technology_form %>  <%# passing a local var giving the technology_form value %>
       <% end %>
+      
+      <div>
+        <%= link_to_add_association 'Add Technology', f, :technologies %> <%# the f is related to the form for not to the local var we are passing above. ==> :technologies this is mapping to the form above to create a new technology field %>
+        
+      </div>
     </div>
 
     <div class="form-group">
