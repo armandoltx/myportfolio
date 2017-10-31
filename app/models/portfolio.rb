@@ -1,7 +1,7 @@
 class Portfolio < ApplicationRecord
   has_many :technologies, dependent: :destroy
   accepts_nested_attributes_for :technologies,  #that's the name we need to pass in the form
-                                allow_destroy: true # to be able to delete technologies in the nested form 
+                                allow_destroy: true, # to be able to delete technologies in the nested form 
                                 reject_if: lambda { |attrs| attrs['name'].blank? } # need to add all attributes in technologies we just have 'name' it is a data validation.. we say if name is blank do not let it create it
   validates_presence_of :title, :body
 
