@@ -16,7 +16,7 @@
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
-          
+
           <%= video_tag(
               'Fishermen-Resting.mp4',
               id: 'background',
@@ -24,21 +24,16 @@
               loop: true,
               muted: true,
               poster: 'kiteme.jpg'
-            ) 
+            )
           %>
 
           <%= render "shared/application_nav" %>
 
           <%# login_helper %>
 
-          <% if flash[:message] %>
-            <% flash.each do |key, message| %>
-              <%= content_tag(:div, message, class: "alert alert-info") %>
-            <% end %>
-          <% end %>
-
-
           <%= yield %>
+
+          <%= render "shared/alerts" %>
 
           <%= render "shared/application_footer" %>
         </div>

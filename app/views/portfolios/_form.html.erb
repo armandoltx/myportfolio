@@ -1,4 +1,9 @@
 <%= form_for(@portfolio_item) do |f| %>
+<% if @portfolio_item.errors.any? %>
+  <% @portfolio_item.errors.full_messages.each do |error| %>
+  <%= js add_gritter(error, title: "Armandoltx Portfolio", sticky: false) %>
+  <% end %>
+<% end %>
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
@@ -40,10 +45,10 @@
       <%= f.fields_for :technologies do |technology_form| %>  <%# :technologies is created in the portfolios model %>
         <%= render 'technology_fields', f: technology_form %>  <%# passing a local var giving the technology_form value %>
       <% end %>
-      
+
       <div>
         <%= link_to_add_association 'Add Technology', f, :technologies %> <%# the f is related to the form for not to the local var we are passing above. ==> :technologies this is mapping to the form above to create a new technology field %>
-        
+
       </div>
     </div>
 
