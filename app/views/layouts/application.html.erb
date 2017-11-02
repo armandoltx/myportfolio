@@ -33,7 +33,8 @@
 
           <%= yield %>
 
-          <%= render "shared/alerts" %>
+          <%= alerts %> <!-- calling a helper method created in application_helper -->
+
 
           <%= render "shared/application_footer" %>
         </div>
