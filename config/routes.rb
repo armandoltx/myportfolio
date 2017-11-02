@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get 'about', to: 'pages#about' # we now point http://localhost:3000/pages/home to ==> http://localhost:3000/about
   get 'contact', to: 'pages#contact' # we now point http://localhost:3000/pages/home to ==> http://localhost:3000/about
+  get 'tech-news', to: 'pages#tech_news'
 
 
   resources :blogs do
