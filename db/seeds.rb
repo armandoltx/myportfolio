@@ -1,5 +1,20 @@
-# --- TOPIC SEED DATA --- #
+# USER SEED DATA
 
+u1 = User.create!(
+                  name: 'Admin',
+                  email: "test@test.com",
+                  roles: "site_admin",
+                  password: 123456
+                )
+u2 = User.create!(
+                  name: 'Armando',
+                  email: "t@test.com",
+                  roles: "user",
+                  password: 123456
+                )
+
+
+# --- TOPIC SEED DATA --- #
 
 3.times do |topic|
   Topic.create!(
