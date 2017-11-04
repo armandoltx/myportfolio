@@ -11,6 +11,9 @@ class BlogsController < ApplicationController
   def show
     @page_title = @blog.title # to dynamically change the title of the site
     @seo_keywords = @blog.body # to add dynamically the seo words
+    # To add the comments in the blog view:
+    @blog = Blog.includes(:comments).friendly.find(params[:id]) # to include the comments in the blog we do not need to hit the DB anytime we need to get the comments
+    @comment = Comment.new
   end
 
   def new
