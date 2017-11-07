@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :comments
   devise_for :users, path: '', path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
   #        get 'pages/home'
   #        get 'pages/about'
@@ -28,4 +27,6 @@ Rails.application.routes.draw do
             # The as: 'portfolio_show' is called NAMING ROUTES and what it does is giving another prefix name, check in rake routes.
             # WHEN you customise the routes, need to check the links in the whole app, because they are affected by the changes.
             # Instead of using portfolio_path(portfolio_item) we use portfolio_show_path(portfolio_item) in the link created in the index page to link to the show page
+            
+  mount ActionCable.server => '/cable' # Fo the action cable
 end
