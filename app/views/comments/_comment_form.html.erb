@@ -1,0 +1,12 @@
+<% unless current_user.is_a? GuestUser %>
+  <%= form_for @comment, url: '#' do |f| %>
+  <!-- we have access to @comment because we created in the blogs controller in the action show -->
+  <!-- we do not want the form to send us to another page when we hit submit that is the reason of the url -->
+    <div class="form-group">
+      <%= f.label :content %>
+      <%= f.text_area :content, class: 'form-control' %>
+    </div>
+
+    <%= f.submit 'Post Comment', class: 'btn btn-primary' %>
+  <% end %>
+<% end %>
