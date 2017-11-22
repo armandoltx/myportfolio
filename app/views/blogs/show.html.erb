@@ -2,6 +2,8 @@
 
   <h2><%= @blog.title %></h2>
 
+  <p><%= @blog.topic.title %></p>
+
   <%= link_to "EDIT", edit_blog_path(@blog.id) if logged_in?(:site_admin) %>
   <%= link_to "DELETE", @blog, method: :delete, :data => { confirm: "are you sure?" } if logged_in?(:site_admin) %>
 
