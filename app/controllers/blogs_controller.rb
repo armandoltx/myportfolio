@@ -4,7 +4,11 @@ class BlogsController < ApplicationController
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :toggle_status]}, site_admin: :all # petergate gem for  authorization check the user model to see what we have created
 
   def index
-    @blogs ||= Blog.page(params[:page]).per(5)  # Kaminari gem to have pagination
+    if logged_in?(:site_admin) #logged_in is a PEtergate method
+      @blogs ||= Blog.recent.page(params[:page]).per(5) # Kaminari gem to have pagination recent is a scope
+    else
+      @blogs ||= Blog.recent.published.page(params[:page]).per(5)
+    end
     @page_title = "My Blog" # to dynamically change the title of the site
   end
 
