@@ -23,6 +23,8 @@ Rails.application.routes.draw do
     put :sort, on: :collection # this is to create the put statement for drag and drop functionality
   end
   get 'angular-itmes', to: 'portfolios#angular'
+     # scope for angular in portfolios PortfoliosController  portfolios#angular => Controller#action
+  get 'ror', to: 'portfolios#ruby_on_rails' # scope for ruby on rails in portfolios PortfoliosController
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
             # The as: 'portfolio_show' is called NAMING ROUTES and what it does is giving another prefix name, check in rake routes.
             # WHEN you customise the routes, need to check the links in the whole app, because they are affected by the changes.
