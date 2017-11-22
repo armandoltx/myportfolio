@@ -13,11 +13,15 @@ class BlogsController < ApplicationController
   end
 
   def show
-    @page_title = @blog.title # to dynamically change the title of the site
-    @seo_keywords = @blog.body # to add dynamically the seo words
-    # To add the comments in the blog view:
-    @blog = Blog.includes(:comments).friendly.find(params[:id]) # to include the comments in the blog we do not need to hit the DB anytime we need to get the comments
-    @comment = Comment.new
+    if logged_in?(:site_admin) || @blog.published?
+      @page_title = @blog.title # to dynamically change the title of the site
+      @seo_keywords = @blog.body # to add dynamically the seo words
+      # To add the comments in the blog view:
+      @blog = Blog.includes(:comments).friendly.find(params[:id]) # to include the comments in the blog we do not need to hit the DB anytime we need to get the comments
+      @comment = Comment.new
+    else
+      redirect_to blogs_path, notice: "You are not authorized to access this page"
+    end
   end
 
   def new
