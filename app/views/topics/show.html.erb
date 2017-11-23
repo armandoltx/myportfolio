@@ -1,0 +1,11 @@
+<div class="col-sm-8 blog-main">
+
+  <h1><%= @topic.title %></h1>
+
+  <%= paginate @blogs %> 
+  <!-- we can access to @blogs because we added in the topics controller in the show action -->
+
+  <%= render @blogs %>
+
+  <%= paginate @blogs %>
+</div>

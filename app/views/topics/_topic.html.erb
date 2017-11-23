@@ -1,0 +1,4 @@
+<div>
+  <%= link_to topic.title, topic_path(topic.id) %> <!-- we can just pass topic rails knows it needs the id -->
+  <!-- in the link we use topic instead of @topic because we are using @topics when we render it render, have a look to index.htnl.erb -->
+</div>

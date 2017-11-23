@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   devise_for :users, path: '', path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
   #        get 'pages/home'
   #        get 'pages/about'
@@ -18,8 +19,11 @@ Rails.application.routes.draw do
       get :toggle_status
     end
   end
+  
+  resources :topics, only: [:index, :show] # give me only the routes for index and shor
 
-  resources :portfolios, except: [:show] do  # Give me all the routes for portfolios except the ones include in the array and now I can create my route for show action
+  resources :portfolios, except: [:show] do  
+    # Give me all the routes for portfolios except the ones include in the array and now I can create my route for show action
     put :sort, on: :collection # this is to create the put statement for drag and drop functionality
   end
   get 'angular-itmes', to: 'portfolios#angular'
