@@ -1,4 +1,5 @@
 class TopicsController < ApplicationController
+  before_action :set_sidebar_topics # to have it available to every action
   layout 'blog' #to use the blogs layout
   def index
     @topics ||= Topic.all
@@ -12,5 +13,11 @@ class TopicsController < ApplicationController
     else
       @blogs ||= @topic.blogs.recent.published.page(params[:page]).per(5)
     end
+  end
+
+  private
+
+  def set_sidebar_topics # to use the scope created in the model
+    @side_bar_topics = Topic.with_blog
   end
 end
