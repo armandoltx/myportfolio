@@ -1,17 +1,22 @@
 # USER SEED DATA
 
-u1 = User.create!(
+User.create!(
                   name: 'Admin',
                   email: "test@test.com",
                   roles: "site_admin",
-                  password: 123456
+                  password: 123456,
+                  password_confirmation: 123456
                 )
-u2 = User.create!(
+puts "1 Admin user created"
+
+User.create!(
                   name: 'Armando',
                   email: "t@test.com",
                   roles: "user",
-                  password: 123456
+                  password: 123456,
+                  password_confirmation: 123456
                 )
+puts "1 regular user created"
 
 
 # --- TOPIC SEED DATA --- #
