@@ -14,7 +14,7 @@
 }
 
 body {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: 'Montserrat', sans-serif;
   color: #555;
 }
 
@@ -30,7 +30,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: normal;
   color: #333;
 }
@@ -172,23 +172,24 @@ h6 {
 
 .comment-card {
   .card {
-   margin-top: 15px;
-   }
+    margin-top: 15px;
+  }
 }
 
 .comment-attribution {
-  font-size: .8em;
+  font-size: 0.8em;
   font-style: italic;
 }
 
 .comment-name {
   font-weight: 700;
- } 
+}
 
- .blogcrumb a {
-   font-size: 1.25em;
-   margin: 0px 10px 0px 10px;
- }
- .blog-nav {
-   margin-bottom: 30px;
- }
+.blogcrumb a {
+  font-size: 1.25em;
+  margin: 0 10px;
+}
+
+.blog-nav {
+  margin-bottom: 30px;
+}

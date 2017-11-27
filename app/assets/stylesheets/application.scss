@@ -40,12 +40,28 @@ a:hover {
 body,
 html {
   height: 100%;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
   color: #fff;
   text-align: center;
   text-shadow: 0 0.05rem 0.1rem rgba(0,0,0,.5);
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Poppins', sans-serif;
 }
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
@@ -224,6 +240,7 @@ body {
 .tech-news a {
   color: green;
 }
+
 .app-card-container {
   color: black;
   text-align: left;
@@ -245,6 +262,7 @@ body {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
 .skill {
   margin-top: 10px;
   margin-bottom: 10px;
