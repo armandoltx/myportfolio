@@ -1,8 +1,16 @@
-<div class="blog-masthead">
+<nav class="navbar navbar-expand-md navbar-light bg-faded blog-nav">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
   <div class="container">
-    <nav class="nav blog-nav">
-      <%= nav_helper('nav-link', 'span') %>  <!-- It is a helper method -->
-      <%= login_helper('nav-link') %>  <!-- It is a helper method -->
-    </nav>
+    <%= link_to "Jordan Hudgens", root_path, class: 'navbar-brand' %>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <%= nav_helper 'nav-link', 'li' %>   <!-- It is a helper method -->
+        <%= login_helper 'nav-link' %>   <!-- It is a helper method -->
+      </ul>
+    </div>
   </div>
-</div>
+</nav>
