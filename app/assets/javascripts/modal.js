@@ -7,9 +7,10 @@ $(function() {
     console.log("callback");
     event.preventDefault();
     var url;
-    target == 'registerBtn' ? url = '/register' : url = '/login'
+    var title;
+    target == 'registerBtn' ? (url = '/register', title= 'Sign Up') : (url = '/login', title = 'Log In')
     // if (target == 'registerBtn') {
-    //   url = '/register';
+    //   url = '/register';s
     // }
     // if (target == 'loginBtn') {
     //   url = '/login';
@@ -17,5 +18,7 @@ $(function() {
     $("#registerLoginModal .modal-body").load(url, function() {
       $("#registerLoginModal").modal('show');
     });
+    
+    $('#registerLoginTitle').text(title);
   });
 });
