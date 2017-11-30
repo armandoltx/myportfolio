@@ -1,10 +1,21 @@
 $(function() {
   console.log("shdhshsf");
-  $('#registerBtn').click (function(event) {
+  $('#registerBtn, #loginBtn').click (function(event) {
+    console.log(event);
+    console.log(event.target.id);
+    var target = event.target.id;
     console.log("callback");
     event.preventDefault();
-    $("#registerModal .modal-body").load('/register', function() {
-      $("#registerModal").modal('show');
+    var url;
+    target == 'registerBtn' ? url = '/register' : url = '/login'
+    // if (target == 'registerBtn') {
+    //   url = '/register';
+    // }
+    // if (target == 'loginBtn') {
+    //   url = '/login';
+    // }
+    $("#registerLoginModal .modal-body").load(url, function() {
+      $("#registerLoginModal").modal('show');
     });
   });
 });
