@@ -28,6 +28,10 @@ class BlogsController < ApplicationController
 
   def new
     @blog ||= Blog.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def edit
