@@ -12,7 +12,8 @@ class PortfoliosController < ApplicationController
       Portfolio.find(value[:id]).update(position: value[:position]) # to comunicate with the DB you can see it in the console
     end
 
-     render body: nil  # not to go to the a new view
+     render body: nil  # not to go to the a new view 
+     #render nothing: true It is what Jordan has in the code not sure what to use
   end
 
   ### SCOPES
